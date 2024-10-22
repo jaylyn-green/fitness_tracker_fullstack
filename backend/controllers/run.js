@@ -9,7 +9,7 @@ exports.addRuns = async(req,res) =>{
         distance,
         date,
         hours,
-        minutes
+        minutes,
     });
     try{
         if(!title || !distance || !date || !hours || !minutes){
