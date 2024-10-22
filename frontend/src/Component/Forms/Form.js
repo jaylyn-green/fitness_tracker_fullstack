@@ -74,7 +74,18 @@ function Form() {
 }
 const FromStyled = styled.form`
 
-//styles
+margin-top: 1em;
+
+.submit{
+    margin-top: 1em;
+}
+.submit button{
+    width: 100px;
+    border: black 1px solid;
+    border-radius: 6px;
+    background: linear-gradient(to right, #86c8ff 0%, #92cdff 100%);
+}
+
 
 `;
 export default Form;
