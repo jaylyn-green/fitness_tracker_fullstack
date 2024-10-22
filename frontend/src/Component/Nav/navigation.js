@@ -3,11 +3,11 @@ import avatar from '../../imgs/avatar.jpg'
 import { menuItems } from "../../utils/MenuItems";
 import { signout } from "../../utils/Icons";
 
-function Nav({active, setActive}) {
+function Nav({ active, setActive }) {
     return (
         <NavStyle>
             <div className="user-con">
-                <img src={avatar} alt='user avatar' />
+                <img src={avatar} alt='user avatar' />          {/**No actual login system, only one user */}
                 <div className="text">
                     <h1>Welcome Jay</h1>
                     <p>Your Performance</p>
@@ -16,8 +16,8 @@ function Nav({active, setActive}) {
             <ul className="menu-items">
                 {menuItems.map((item) => {
                     return <li key={item.id}
-                            onClick={() => setActive(item.id)}
-                            className = {active === item.id ? 'active': ''}  
+                        onClick={() => setActive(item.id)}
+                        className={active === item.id ? 'active' : ''}
                     >
                         {item.icon}
                         <span>{item.title}</span>
@@ -48,6 +48,7 @@ const NavStyle = styled.nav`
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
+    
     .user-con{
         height: 100px;
         display: flex;

@@ -8,7 +8,7 @@ function Runs() {
     return(
         <RunsStyled>
             <InnerLayout>
-                <h1>Runs</h1>
+                <h1>Your Runs</h1>
                 <div className="run-content">
                     <div className="form-container">
                         <Form />
