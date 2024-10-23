@@ -14,13 +14,15 @@ function Form() {
         minutes: ''
     })
     const { title, distance, date, hours, minutes } = inputState;
-    const handleInput = name => e => {
-        setInputState({ ...inputState, [name]: e.target.value })
+    const handleInput = param => e => {
+        setInputState({ ...inputState, [param]: e.target.value });
     }
+
     const handleSubmit = e => {
         e.preventDefault()
         addRun(inputState)
     }
+
     return (
         <FromStyled onSubmit={handleSubmit}>
             <div className="input-control">
