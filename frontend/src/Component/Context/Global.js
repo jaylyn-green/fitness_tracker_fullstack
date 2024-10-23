@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from 'axios';
-const BASE_URL = "http://localhost:5757/api/v1/";
+const BASE_URL = "http://localhost:5759/api/v1/";
 
 const GlobalConetext = React.createContext();
 
@@ -14,7 +14,7 @@ export const GlobalProvider = ({ children }) => {
             .catch((err) => {
                 setError(err.response.data.message);
             });
-            console.log(response);
+        console.log(response);
     }
 
     return (

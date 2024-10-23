@@ -5,7 +5,7 @@ function Dashboard() {
     return (
         <DashboardStyled>
             <InnerLayout>
-
+                Dashboard
             </InnerLayout>
         </DashboardStyled>
     );
