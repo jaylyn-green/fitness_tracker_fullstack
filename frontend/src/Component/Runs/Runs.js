@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { useGlobalContext } from "../Context/Global";
+import { useGlobalContext } from "../../Context/Global";
 import { InnerLayout } from "../../styles/layouts";
 import Form from "../Forms/Form";
 function Runs() {
-    const {addRun} = useGlobalContext();
-    
+    const {addRuns} = useGlobalContext();
+
     return(
         <RunsStyled>
             <InnerLayout>

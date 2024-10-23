@@ -15,7 +15,7 @@ exports.addRuns = async (req, res) => {
         if (!title || !distance || !date || !hours || !minutes) {
             return res.status(400).json({ message: "All feilds are required" });
         }
-        if (distance <= .1 || !distance === 'number') {
+        if (distance < 0 || !distance === 'number') {
             return res.status(400).json({ message: "Distance must be a positive number" });
         }
         if (!hours === 'number' || !minutes === 'number') {

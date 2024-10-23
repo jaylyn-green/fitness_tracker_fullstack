@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
-import { useGlobalContext } from "../Context/Global"
+import { useGlobalContext } from "../../Context/Global"
 
 function Form() {
-    const { addRun } = useGlobalContext();
+    const { addRuns } = useGlobalContext();
     const [inputState, setInputState] = useState({
         title: '',
         distance: '',
@@ -19,8 +19,8 @@ function Form() {
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
-        addRun(inputState)
+        e.preventDefault();
+        addRuns(inputState);
     }
 
     return (

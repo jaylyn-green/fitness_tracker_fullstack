@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import Dashboard from './Component/Dashboard/Dashboard';
 import Runs from './Component/Runs/Runs'
 import Times from './Component/Times/Times'
-import { useGlobalContext } from './Component/Context/Global';
+import { useGlobalContext } from './Context/Global';
 function App() {
   const [active, setActive] = useState(1);
   const global = useGlobalContext();
