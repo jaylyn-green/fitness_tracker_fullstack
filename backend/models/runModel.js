@@ -13,15 +13,17 @@ const runSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
+        required: true
+    },
+    time: {
+        type: String,  
         required: true,
-    },
-    hours: {
-        type: Number,
-        required: true
-    },
-    minutes:{
-        type: Number,
-        required: true
+        validate: {
+            validator: function(v) {
+                return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(v);
+            },
+            message: props => `${props.value} is not a valid time format!`
+        }
     }
 });
 

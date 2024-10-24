@@ -10,10 +10,9 @@ function Form() {
         title: '',
         distance: '',
         date: '',
-        hours: '',
-        minutes: ''
+        time: '',
     })
-    const { title, distance, date, hours, minutes } = inputState;
+    const { title, distance, date, time } = inputState;
     const handleInput = param => e => {
         setInputState({ ...inputState, [param]: e.target.value });
     }
@@ -25,11 +24,11 @@ function Form() {
 
     return (
         <FromStyled onSubmit={handleSubmit}>
-            <div className="input-control">
+            <div className="input-control">             {/**"title" can double as a description if needed */}
                 <input type="text"
                     value={title}
                     name={"title"}
-                    placeholder="Run title"
+                    placeholder="Run description"
                     onChange={handleInput('title')}
                 />
             </div>
@@ -37,14 +36,14 @@ function Form() {
                 <input type="text"
                     value={distance}
                     name={"distance"}
-                    placeholder="Run distance"
+                    placeholder="Run distance in miles."
                     onChange={handleInput('distance')}
                 />
             </div>
             <div className="input-control">
                 <DatePicker
                     id="date"
-                    placeholderText="Enter a Date."
+                    placeholderText="Enter a date in mm/dd/yyyy format."
                     selected={date}
                     dateFormat='MM/dd/yyyy'
                     onChange={(date) => {
@@ -52,20 +51,12 @@ function Form() {
                     }}
                 />
             </div>
-            <div className="input-control">
-                <input value={hours}
+            <div className="input-control">             
+                <input value={time}
                     type="text"
-                    name={hours}
-                    placeholder="Enter the amount of hours."
-                    onChange={handleInput('hours')}
-                />
-            </div>
-            <div className="input-control">
-                <input type="number"
-                    value={minutes}
-                    name={minutes}
-                    placeholder="Enter the amount of minutes."
-                    onChange={handleInput('minutes')}
+                    name={time}
+                    placeholder="Enter your time in hh:mm:ss format."
+                    onChange={handleInput('time')}
                 />
             </div>
             <div className="submit">

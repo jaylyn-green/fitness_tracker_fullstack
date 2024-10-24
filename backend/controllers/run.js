@@ -2,28 +2,27 @@ const runSchema = require('../models/runModel');
 
 exports.addRuns = async (req, res) => {
 
-    const { title, distance, date, hours, minutes } = req.body;
+    const { title, distance, date, time } = req.body;
 
     const run = runSchema({
         title,
         distance,
         date,
-        hours,
-        minutes,
+        time,
     });
     try {
-        if (!title || !distance || !date || !hours || !minutes) {
-            return res.status(400).json({ message: "All feilds are required" });
+        if (!title || !distance || !date || !time) {
+            return res.status(400).json({ message: "All fields are required" });
         }
         if (distance < 0 || !distance === 'number') {
             return res.status(400).json({ message: "Distance must be a positive number" });
         }
-        if (!hours === 'number' || !minutes === 'number') {
-            return res.status(400).json({ message: "Time must be a positive number!" });
-        }
         await run.save();
         res.status(200).json({ message: 'Run saved!' });
     } catch (error) {
+        if(error.name === "ValidationError"){
+        return res.status(400).json({message: "Time is incorrect"});
+    }
         res.status(500).json({ message: "Server error!" });
     }
     console.log(run);
