@@ -30,7 +30,7 @@ function Form() {
                 <input type="text"
                     value={title}
                     name={"title"}
-                    placeholder="Run description"
+                    placeholder="Short description."
                     onChange={handleInput('title')}
                 />
             </div>

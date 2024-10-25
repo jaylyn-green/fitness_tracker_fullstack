@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <AppStyled bg={bg} className='App'>
+    <AppStyled bg={bg} className='App'> 
       <MainLayout>
         <Navigation active={active} setActive={setActive} />
         <main>

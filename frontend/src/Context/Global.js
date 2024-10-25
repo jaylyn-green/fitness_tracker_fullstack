@@ -16,10 +16,18 @@ export const GlobalProvider = ({ children }) => {
             });
         console.log(response);
     }
+    const getRuns = async (params) => {
+        const response = await axios.get(`${BASE_URL}getRuns`)
+            .catch((err) => {
+                setError(err.response.data.message);
+            });
+        console.log(response);
+    }
 
     return (
         <GlobalConetext.Provider value={{
-            addRuns
+            addRuns,
+            getRuns
         }}>
             {children}
         </GlobalConetext.Provider>
