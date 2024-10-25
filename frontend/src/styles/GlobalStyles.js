@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
             --primary-color3: 'color: rgba(34, 34, 96, .4)';
             --color-green: #42AD00;
             --color-grey: #aaa;
-            --color-accent: #F56692;
+            --color-accent: #007ae1;
             --color-delete: #FF0000;
         }
     body{

@@ -4,9 +4,9 @@ import { useGlobalContext } from "../../Context/Global";
 import { InnerLayout } from "../../styles/layouts";
 import Form from "../Forms/Form";
 function Runs() {
-    const {addRuns} = useGlobalContext();
+    const { addRuns } = useGlobalContext();
 
-    return(
+    return (
         <RunsStyled>
             <InnerLayout>
                 <h1>Your Runs</h1>

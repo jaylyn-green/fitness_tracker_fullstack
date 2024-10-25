@@ -3,6 +3,8 @@ import styled from "styled-components";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import { useGlobalContext } from "../../Context/Global"
+import Button from "../Button/Button";
+import { plus } from "../../utils/Icons"
 
 function Form() {
     const { addRuns } = useGlobalContext();
@@ -51,7 +53,7 @@ function Form() {
                     }}
                 />
             </div>
-            <div className="input-control">             
+            <div className="input-control">
                 <input value={time}
                     type="text"
                     name={time}
@@ -60,7 +62,14 @@ function Form() {
                 />
             </div>
             <div className="submit">
-                <button>Add Run</button>
+                <Button
+                    name={'Add run'}
+                    icon={plus}
+                    bPad={'.8rem 1.6rem'}
+                    bRad={'30px'}
+                    bg={'linear-gradient(to right, var(--color-accent) 0%, #008bff 100%)'}
+                    color={'#fff'}
+                />
             </div>
         </FromStyled>
     )
@@ -68,17 +77,37 @@ function Form() {
 const FromStyled = styled.form`
 
 margin-top: 1em;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+input{
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    background: transparent;
+    resize: none;
+    box-shadow: 0px 1px 15px rgba(0,0,0,0.06);
+    color: rgba(34,34,96,0.9);
+    &::placeholder{
+        color: rgba(34,34,96,0.9);
+    }
+} 
+.input-control{
+    input{
+        width: 100%;
+    }
+
+}
 
 .submit{
     margin-top: 1em;
+    button{
+        &:hover{
+        background: var(--color-green) !important;
+    }
+}        
 }
-.submit button{
-    width: 100px;
-    border: black 1px solid;
-    border-radius: 6px;
-    background: linear-gradient(to right, #86c8ff 0%, #92cdff 100%);
-}
-
-
 `;
 export default Form;

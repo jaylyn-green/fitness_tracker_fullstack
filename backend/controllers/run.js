@@ -20,9 +20,9 @@ exports.addRuns = async (req, res) => {
         await run.save();
         res.status(200).json({ message: 'Run saved!' });
     } catch (error) {
-        if(error.name === "ValidationError"){
-        return res.status(400).json({message: "Time is incorrect"});
-    }
+        if (error.name === "ValidationError") {
+            return res.status(400).json({ message: "Time and/or is incorrect" });
+        }
         res.status(500).json({ message: "Server error!" });
     }
     console.log(run);
