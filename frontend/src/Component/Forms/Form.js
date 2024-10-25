@@ -25,7 +25,7 @@ function Form() {
     }
 
     return (
-        <FromStyled onSubmit={handleSubmit}>
+        <FormStyled onSubmit={handleSubmit}>
             <div className="input-control">             {/**"title" can double as a description if needed */}
                 <input type="text"
                     value={title}
@@ -44,20 +44,21 @@ function Form() {
             </div>
             <div className="input-control">
                 <DatePicker
-                    id="date"
-                    placeholderText="Enter a date in mm/dd/yyyy format."
+                    id='date'
+                    placeholderText='Enter A date (dd/mm/yyyy).'
                     selected={date}
-                    dateFormat='MM/dd/yyyy'
+                    dateFormat="dd/MM/yyyy"
                     onChange={(date) => {
                         setInputState({ ...inputState, date: date })
                     }}
                 />
             </div>
+
             <div className="input-control">
                 <input value={time}
                     type="text"
                     name={time}
-                    placeholder="Enter your time in hh:mm:ss format."
+                    placeholder="Enter your time (hh:mm:ss)."
                     onChange={handleInput('time')}
                 />
             </div>
@@ -71,15 +72,16 @@ function Form() {
                     color={'#fff'}
                 />
             </div>
-        </FromStyled>
+        </FormStyled>
     )
 }
-const FromStyled = styled.form`
+const FormStyled = styled.form`
 
 margin-top: 1em;
 display: flex;
 flex-direction: column;
 gap: 2rem;
+
 input{
     font-family: inherit;
     font-size: inherit;
@@ -98,8 +100,10 @@ input{
     input{
         width: 100%;
     }
-
-}
+     .react-datepicker-wrapper {
+            width: 100%;
+    }
+    }
 
 .submit{
     margin-top: 1em;
