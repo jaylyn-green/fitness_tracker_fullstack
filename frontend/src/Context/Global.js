@@ -6,7 +6,6 @@ const GlobalConetext = React.createContext();
 
 export const GlobalProvider = ({ children }) => {
     const [runs, setRuns] = useState([]);
-    const [times, setTimes] = useState([]);
     const [error, setError] = useState(null);
 
     const addRuns = async (runs) => {
@@ -16,18 +15,17 @@ export const GlobalProvider = ({ children }) => {
             });
         console.log(response);
     }
-    const getRuns = async (params) => {
-        const response = await axios.get(`${BASE_URL}getRuns`)
-            .catch((err) => {
-                setError(err.response.data.message);
-            });
-        console.log(response);
+    const getRuns = async () => {
+        const response = await axios.get(`${BASE_URL}get-runs`)
+        setRuns(response.data)
+        console.log(response.data);
     }
 
     return (
         <GlobalConetext.Provider value={{
             addRuns,
-            getRuns
+            getRuns,
+            runs
         }}>
             {children}
         </GlobalConetext.Provider>
