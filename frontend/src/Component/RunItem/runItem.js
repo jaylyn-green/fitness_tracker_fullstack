@@ -7,10 +7,11 @@ function RunItem({
     distance,
     time,
     date,
+    indicatorColor
 }) {
 
     return (
-        <RunItemStyled>
+        <RunItemStyled indicator={indicatorColor}>
             <div className="icon">
 
             </div>
@@ -18,9 +19,9 @@ function RunItem({
                 <h5>{title}</h5>
                 <div className="inner-content">
                     <div className="text">
-                        <p>{runner} 50 miles</p>
-                        <p>{calendar} {date}</p>
-                        <p></p> {/**huh? */}
+                        <p>{runner}50 miles <span /></p>
+                        <p> {calendar}{date}</p>
+                        <p></p>                 {/**??? */}
                     </div>
                     <div className="btn-container">
                         <Button
@@ -29,8 +30,7 @@ function RunItem({
                             bRad={'50%'}
                             bg={'var(--primary-color)'}
                             color={'#fff'}
-                            
-                        /> 
+                        />
                     </div>
                 </div>
             </div>
@@ -38,6 +38,66 @@ function RunItem({
     );
 }
 const RunItemStyled = styled.div`
-
+    background: #FCF6F9;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 1px 15px rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    color: #222260;
+    .icon{
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background: #F5F5F5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #FFFFFF;
+        i{
+            font-size: 2.6rem;
+        }
+    }
+    .content{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        h5{
+            font-size: 1.3rem;
+            padding-left: 2rem;
+            position: relative;
+            &::before{
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0.8rem;
+                height: 0.8rem;
+                background: ${props => props.indicator};
+                content: '';
+                border-radius: 50%;
+            }
+        }
+        .inner-content{
+            display: flex;
+            justify-content: space-between;
+            .text{
+                gap:1.5rem;
+                display: flex;
+                p{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.3rem;
+                    color: var(--primary-color);
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
 `;
 export default RunItem;

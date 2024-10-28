@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { useGlobalContext } from "../../Context/Global";
 import { InnerLayout } from "../../styles/layouts";
 import Form from "../Forms/Form";
-import {Run} from 
+import RunItem from "../RunItem/runItem";
 
 function Runs() {
     const { addRuns, runs, getRuns } = useGlobalContext();
 
-    useEffect(() =>{
+    useEffect(() => {
         getRuns();
-    },[])
+    }, [])
 
     return (
         <RunsStyled>
@@ -21,9 +21,17 @@ function Runs() {
                         <Form />
                     </div>
                     <div className="runs">
-                        {runs.map((run) =>{
-                            const {title, distance, date, time} = run;
-                            return <Run />
+                        {runs.map((run) => {
+                            const { _id, title, distance, date, time } = run;
+                            return <RunItem
+                                key={_id}
+                                id={_id}
+                                title={title}
+                                distance={distance}
+                                date={date}
+                                time={time}
+                                indicatorColor="#42AD00"
+                            />
                         })}
                     </div>
                     <div className="runs">
