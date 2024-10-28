@@ -6,7 +6,7 @@ import Form from "../Forms/Form";
 import RunItem from "../RunItem/runItem";
 
 function Runs() {
-    const { addRuns, runs, getRuns } = useGlobalContext();
+    const { addRuns, runs, getRuns, deleteRun } = useGlobalContext();
 
     useEffect(() => {
         getRuns();
@@ -31,11 +31,9 @@ function Runs() {
                                 date={date}
                                 time={time}
                                 indicatorColor="#42AD00"
+                                deleteRun={deleteRun}
                             />
                         })}
-                    </div>
-                    <div className="runs">
-
                     </div>
                 </div>
             </InnerLayout>
@@ -43,5 +41,15 @@ function Runs() {
     );
 }
 const RunsStyled = styled.div`
+    display: flex;
+    overflow: auto;
+    .run-content{
+        display: flex;
+        gap: 2rem;
+        flex: 1;
+        .runs{
+            flex: 1;
+        }
+    }
 `;
 export default Runs;

@@ -20,12 +20,17 @@ export const GlobalProvider = ({ children }) => {
         setRuns(response.data)
         console.log(response.data);
     }
+    const deleteRun = async (id) => {
+        const response = await axios.delete(`${BASE_URL}/delete-run/${id}`);
+        getRuns();
+    }
 
     return (
         <GlobalConetext.Provider value={{
             addRuns,
             getRuns,
-            runs
+            runs,
+            deleteRun
         }}>
             {children}
         </GlobalConetext.Provider>

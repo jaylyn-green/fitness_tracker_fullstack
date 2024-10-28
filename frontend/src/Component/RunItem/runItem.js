@@ -1,35 +1,35 @@
 import styled from "styled-components";
-import { calendar, plus, runner } from "../../utils/Icons";
+import { calendar, runner, trash } from "../../utils/Icons";
 import Button from "../Button/Button";
 
 function RunItem({
+    id,
     title,
     distance,
     time,
     date,
-    indicatorColor
+    indicatorColor,
+    deleteRun
 }) {
 
     return (
         <RunItemStyled indicator={indicatorColor}>
-            <div className="icon">
-
-            </div>
+            
             <div className="content">
                 <h5>{title}</h5>
                 <div className="inner-content">
                     <div className="text">
-                        <p>{runner}50 miles <span /></p>
+                        {distance > 1 || distance < 1 ? <p>{runner}{distance} miles <span /></p> : <p>{runner}{distance} mile</p>}
                         <p> {calendar}{date}</p>
-                        <p></p>                 {/**??? */}
                     </div>
                     <div className="btn-container">
                         <Button
-                            icon={plus}
+                            icon={trash}
                             bPad={'1rem'}
                             bRad={'50%'}
                             bg={'var(--primary-color)'}
                             color={'#fff'}
+                            onClick={() => deleteRun(id)}
                         />
                     </div>
                 </div>
@@ -49,19 +49,8 @@ const RunItemStyled = styled.div`
     gap: 1rem;
     width: 100%;
     color: #222260;
-    .icon{
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-        background: #F5F5F5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid #FFFFFF;
-        i{
-            font-size: 2.6rem;
-        }
-    }
+    
+    
     .content{
         flex: 1;
         display: flex;

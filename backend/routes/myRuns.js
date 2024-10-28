@@ -4,6 +4,6 @@ const router = require('express').Router();
 
 router.post('/add-runs', addRuns)
       .get('/get-runs',getRuns)
-      .delete('/delete-runs/:id', deleteRun)
+      .delete('/delete-run/:id', deleteRun)
 
 module.exports = router;
