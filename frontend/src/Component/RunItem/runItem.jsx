@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { calendar, runner, trash } from "../../utils/Icons";
 import Button from "../Button/Button";
-//import dateFormat, from "dateformat";
+import dateFormat from "dateformat";
 
 function RunItem({
     id,
@@ -20,7 +20,7 @@ function RunItem({
                 <div className="inner-content">
                     <div className="text">
                         {distance > 1 || distance < 1 ? <p>{runner}{distance} miles <span /></p> : <p>{runner}{distance} mile</p>}
-                        <p> {calendar}{date}</p>
+                        <p> {calendar}{dateFormat(date, "dddd, mmmm m, dS, yyyy")}</p>
                     </div>
                     <div className="btn-container">
                         <Button
