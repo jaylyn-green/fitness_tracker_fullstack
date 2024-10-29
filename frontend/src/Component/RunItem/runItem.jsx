@@ -20,7 +20,7 @@ function RunItem({
                 <div className="inner-content">
                     <div className="text">
                         {distance > 1 || distance < 1 ? <p>{runner}{distance} miles <span /></p> : <p>{runner}{distance} mile</p>}
-                        <p> {calendar}{dateFormat(date, "dddd, mmmm m, dS, yyyy")}</p>
+                        <p> {calendar}{dateFormat(date, "dddd, mmmm dS, yyyy")}</p>
                     </div>
                     <div className="btn-container">
                         <Button
