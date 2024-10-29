@@ -1,6 +1,5 @@
 import React, { useContext, useState, useCallback } from "react";
 import axios from "axios";
-import dateFormat from "dateformat";
 
 const BASE_URL = "http://localhost:5759/api/v1/";
 
