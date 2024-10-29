@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { calendar, runner, trash } from "../../utils/Icons";
 import Button from "../Button/Button";
+//import dateFormat, from "dateformat";
 
 function RunItem({
     id,
     title,
     distance,
-    time,
     date,
     indicatorColor,
     deleteRun
@@ -14,7 +14,7 @@ function RunItem({
 
     return (
         <RunItemStyled indicator={indicatorColor}>
-            
+
             <div className="content">
                 <h5>{title}</h5>
                 <div className="inner-content">
@@ -27,7 +27,7 @@ function RunItem({
                             icon={trash}
                             bPad={'1rem'}
                             bRad={'50%'}
-                            bg={'var(--primary-color)'}
+                            bg={'var(--color-delete)'}
                             color={'#fff'}
                             onClick={() => deleteRun(id)}
                         />

@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import { plus } from "../../utils/Icons"
 
 function Form() {
-    const { addRuns } = useGlobalContext();
+    const { addRuns, getRuns } = useGlobalContext();
     const [inputState, setInputState] = useState({
         title: '',
         distance: '',
@@ -22,6 +22,7 @@ function Form() {
     const handleSubmit = e => {
         e.preventDefault();
         addRuns(inputState);
+        getRuns();
     }
 
     return (

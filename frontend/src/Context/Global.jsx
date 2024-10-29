@@ -13,7 +13,7 @@ export const GlobalProvider = ({ children }) => {
             .catch((err) => {
                 setError(err.response.data.message);
             });
-        console.log(response);
+        getRuns();
     }
     const getRuns = async () => {
         const response = await axios.get(`${BASE_URL}get-runs`)

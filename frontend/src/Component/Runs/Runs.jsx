@@ -6,7 +6,7 @@ import Form from "../Forms/Form";
 import RunItem from "../RunItem/runItem";
 
 function Runs() {
-    const { addRuns, runs, getRuns, deleteRun } = useGlobalContext();
+    const { runs, getRuns, deleteRun } = useGlobalContext();
 
     useEffect(() => {
         getRuns();
@@ -17,7 +17,7 @@ function Runs() {
             <InnerLayout>
                 <h1>Your Runs</h1>
                 <div className="run-content">
-                    <div className="form-container">
+                    <div className="form-container">  
                         <Form />
                     </div>
                     <div className="runs">
