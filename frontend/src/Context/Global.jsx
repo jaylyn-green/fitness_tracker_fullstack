@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useCallback } from "react";
 import axios from "axios";
 import dateFormat from "dateformat";
 
@@ -18,24 +18,24 @@ export const GlobalProvider = ({ children }) => {
       });
     getRuns();
   };
-  const getRuns = async () => {
+  const getRuns = useCallback(async () => {
     const response = await axios.get(`${BASE_URL}get-runs`);
     setRuns(response.data);
-  };
+  },[]);
+
   const deleteRun = async (id) => {
     const response = await axios.delete(`${BASE_URL}/delete-run/${id}`);
     getRuns();
   };
 
-  const calcTotalMiles = () => {
-    
+  const calcTotalMiles = useCallback(() => {
     let totalMiles = 0;
     runs.forEach((run) => {
       totalMiles += run.distance;
     });
     return totalMiles;
-  };
-  const calcTotalTime = () => {
+  },[runs]);
+  const calcTotalTime = useCallback(() => {
     let totalSeconds = 0;
 
     runs.forEach((run) => {
@@ -52,7 +52,7 @@ export const GlobalProvider = ({ children }) => {
     const seconds = (totalSeconds % 60).toString().padStart(2, "0");
 
     return `${hours}:${minutes}:${seconds}`;
-  };
+  },[runs]);
 
   return (
     <GlobalConetext.Provider
