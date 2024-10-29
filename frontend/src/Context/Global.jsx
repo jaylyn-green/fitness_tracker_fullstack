@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }) => {
     const getRuns = async () => {
         const response = await axios.get(`${BASE_URL}get-runs`)
         setRuns(response.data)
-        console.log(response.data);
+        
     }
     const deleteRun = async (id) => {
         const response = await axios.delete(`${BASE_URL}/delete-run/${id}`);
