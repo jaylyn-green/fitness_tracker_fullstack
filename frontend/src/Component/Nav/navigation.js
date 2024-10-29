@@ -10,7 +10,6 @@ function Nav({ active, setActive }) {
                 <img src={avatar} alt='user avatar' />          {/**No actual login system, only one user */}
                 <div className="text">
                     <h1>Welcome Jay</h1>
-                    <p>Your Performance</p>
                 </div>
             </div>
             <ul className="menu-items">

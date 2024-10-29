@@ -9,13 +9,13 @@ export const menuItems = [
     },
     {
         id: 2,
-        title: 'View runs',
+        title: 'Add runs',
         icon: runner,
         link: '/dashboard'
     },
     {
         id: 3,
-        title: 'View times',
+        title: 'View performance',
         icon: trend,
         link: '/dashboard'
     }

@@ -7,6 +7,7 @@ function RunItem({
     id,
     title,
     distance,
+    time,
     date,
     indicatorColor,
     deleteRun
@@ -21,6 +22,7 @@ function RunItem({
                     <div className="text">
                         {distance > 1 || distance < 1 ? <p>{runner}{distance} miles <span /></p> : <p>{runner}{distance} mile</p>}
                         <p> {calendar}{dateFormat(date, "dddd, mmmm dS, yyyy")}</p>
+                        <p>({time})</p>
                     </div>
                     <div className="btn-container">
                         <Button

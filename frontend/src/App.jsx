@@ -4,9 +4,10 @@ import Navigation from './Component/Nav/Navigation';
 import { MainLayout } from './styles/layouts';
 import React, { useState } from 'react';
 import Dashboard from './Component/Dashboard/Dashboard';
-import Runs from './Component/Runs/Runs'
-import Times from './Component/Times/Times'
+import Runs from './Component/Runs/AddRuns'
+import Performance from './Component/Times/Performance'
 import { useGlobalContext } from './Context/Global';
+
 function App() {
   const [active, setActive] = useState(1);
   const global = useGlobalContext();
@@ -21,7 +22,7 @@ function App() {
         return <Runs />
 
       case 3:
-        return <Times />
+        return <Performance />
 
       default:
         return <Dashboard />

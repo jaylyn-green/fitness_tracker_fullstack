@@ -5,7 +5,7 @@ import { InnerLayout } from "../../styles/layouts";
 import Form from "../Forms/Form";
 import RunItem from "../RunItem/runItem";
 
-function Runs() {
+function AddRuns() {
   const { runs, getRuns, deleteRun } = useGlobalContext();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Runs() {
   return (
     <RunsStyled>
       <InnerLayout>
-        <h1>Your Runs</h1>
+        <h1>Add your data</h1>
         <div className="run-content">
           <div className="form-container">
             <Form />
@@ -26,7 +26,7 @@ function Runs() {
                 Nothing to see yet...
                 <br />
                 <br />
-                Try adding something in the form on the left.
+                Try adding something in the form on the left. 
               </h3>
             ) : (
               runs.map((run) => {
@@ -65,7 +65,6 @@ const RunsStyled = styled.div`
   .empty-message {
     display: flex;
     justify-content: center;
-
   }
 `;
-export default Runs;
+export default AddRuns;
