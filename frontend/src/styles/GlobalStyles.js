@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
             --color-green: #42AD00;
             --color-grey: #aaa;
             --color-accent: #007ae1;
-            --color-delete: #FF0000;
+            --color-delete: #cf0000;
         }
     body{
         font-family: 'Nunito', sans-serif;
