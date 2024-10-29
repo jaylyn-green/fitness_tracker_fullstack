@@ -14,6 +14,7 @@ export const GlobalProvider = ({ children }) => {
       .post(`${BASE_URL}add-runs`, runs)
       .catch((err) => {
         setError(err.response.data.message);
+        console.log(error);
       });
     getRuns();
   };

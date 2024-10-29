@@ -4,7 +4,7 @@ import { useGlobalContext } from "../../Context/Global";
 import { useEffect } from "react";
 
 function Performance() {
-    const {calcTotalMiles, calcTotalTime, runs, getRuns} = useGlobalContext();
+    const {calcTotalMiles, calcTotalTime, getRuns} = useGlobalContext();
     
     useEffect(() =>{
         getRuns();
