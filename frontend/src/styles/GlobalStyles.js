@@ -10,12 +10,13 @@ export const GlobalStyles = createGlobalStyle`
     }
     :root{
             --primary-color: #222260;
-            --primary-color2: 'color: rgba(34, 34, 96, .6)';
-            --primary-color3: 'color: rgba(34, 34, 96, .4)';
+            --primary-color2: color: rgba(34, 34, 96, .6);
+            --primary-color3: color: rgba(34, 34, 96, .4);
             --color-green: #42AD00;
             --color-grey: #aaa;
             --color-accent: #007ae1;
             --color-delete: #cf0000;
+            --box-shadow: 0px 1px 15px rgba(0,0,0,0.06);
         }
     body{
         font-family: 'Nunito', sans-serif;
@@ -23,5 +24,8 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
         color: rgba(34, 34, 96, .6);
         
+    }
+    h1,h2,h3,h4,h5,h6{
+        color: var(--primary-color);
     }
 `;

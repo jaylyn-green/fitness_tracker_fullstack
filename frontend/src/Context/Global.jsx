@@ -20,6 +20,7 @@ export const GlobalProvider = ({ children }) => {
   };
   const getRuns = useCallback(async () => {
     const response = await axios.get(`${BASE_URL}get-runs`);
+    console.log('Fetched runs:', response.data);
     setRuns(response.data);
   },[]);
 
@@ -33,7 +34,7 @@ export const GlobalProvider = ({ children }) => {
     runs.forEach((run) => {
       totalMiles += run.distance;
     });
-    return totalMiles;
+    return totalMiles.toFixed(2);
   },[runs]);
   const calcTotalTime = useCallback(() => {
     let totalSeconds = 0;

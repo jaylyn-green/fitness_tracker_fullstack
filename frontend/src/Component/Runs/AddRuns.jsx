@@ -15,10 +15,12 @@ function AddRuns() {
   return (
     <RunsStyled>
       <InnerLayout>
-        <h1>Add your data</h1>
         <div className="run-content">
-          <div className="form-container">
-            <Form />
+          <div className="form-wrapper">
+            <h1 className="page-title">Add your data</h1>
+            <div className="form-container">
+              <Form />
+            </div>
           </div>
           <div className="runs">
             {runs.length <= 0 ? (
@@ -26,7 +28,7 @@ function AddRuns() {
                 Nothing to see yet...
                 <br />
                 <br />
-                Try adding something in the form on the left. 
+                Try adding something in the form on the left.
               </h3>
             ) : (
               runs.map((run) => {
@@ -53,18 +55,36 @@ function AddRuns() {
 }
 const RunsStyled = styled.div`
   display: flex;
-  overflow: auto;
+
   .run-content {
     display: flex;
     gap: 2rem;
-    flex: 1;
+    height: 100vh; 
+    overflow: hidden;
+
+    .form-wrapper {
+      position: sticky;
+      top: 0;
+      align-self: flex-start;
+      width: 100%;
+      max-width: 300px;
+      z-index: 10;
+      padding-top: 1rem;
+    }
+
     .runs {
       flex: 1;
+      overflow-y: auto;
+      height: 100%; 
+      padding-right: 1rem;
     }
   }
+
   .empty-message {
     display: flex;
     justify-content: center;
   }
 `;
+
+
 export default AddRuns;
