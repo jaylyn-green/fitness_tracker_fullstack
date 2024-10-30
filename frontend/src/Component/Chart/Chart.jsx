@@ -33,14 +33,19 @@ function Chart() {
     getRuns();
   }, []);
 
+  const convertTimeToSeconds = (time) => {
+    const [hours, minutes, seconds] = time.split(":").map(Number);
+    return hours * 3600 + minutes * 60 + seconds;
+  };
+
   const data = {
     labels: runs.map((run) => {
       const { date } = run;
-      return dateFormat(date, "mm/d/yy");
+      return dateFormat(date, "m/d/yyyy");
     }),
     datasets: [
       {
-        label: "Run",
+        label: "Distance (miles)",
         data: [
           ...runs.map((run) => {
             const { distance } = run;
@@ -48,9 +53,11 @@ function Chart() {
           }),
         ],
         backgroundColor: "green",
+        tension: 0.2,
       },
     ],
   };
+
 
   return (
     <ChartStyled>
@@ -66,6 +73,7 @@ const ChartStyled = styled.div`
   padding: 1rem;
   border-radius: 20px;
   height: 100%;
+  margin-top: 2rem;
 `;
 
 export default Chart;

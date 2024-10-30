@@ -7,7 +7,7 @@ function Dashboard() {
     return (
         <DashboardStyled>
             <InnerLayout>
-                <h1>Your performance</h1>
+                <h1>Your Dashboard</h1>
                 <div className="stats-con">
                     <div className="chart-con">
                         <Chart />
@@ -18,6 +18,5 @@ function Dashboard() {
     );
 }
 const DashboardStyled = styled.div`
-
 `;
 export default Dashboard;
