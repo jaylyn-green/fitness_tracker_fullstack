@@ -18,5 +18,6 @@ function Dashboard() {
     );
 }
 const DashboardStyled = styled.div`
+
 `;
 export default Dashboard;

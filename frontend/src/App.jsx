@@ -5,7 +5,7 @@ import { MainLayout } from './styles/layouts';
 import React, { useState } from 'react';
 import Dashboard from './Component/Dashboard/Dashboard';
 import Runs from './Component/Runs/AddRuns'
-import Performance from './Component/Times/Performance'
+import Performance from './Component/Performance/Performance'
 import { useGlobalContext } from './Context/Global';
 
 function App() {
