@@ -73,4 +73,4 @@ const PerformanceStyled = styled.div`
     }
 
 `;
-export default Performance
+export default Performance;
