@@ -33,11 +33,6 @@ function Chart() {
     getRuns();
   }, []);
 
-  // const convertTimeToSeconds = (time) => {
-  //   const [hours, minutes, seconds] = time.split(":").map(Number);       Needed to show on time graph if implemented
-  //   return hours * 3600 + minutes * 60 + seconds;
-  // };
-
   const data = {
     labels: runs.map((run) => {
       const { date } = run;
