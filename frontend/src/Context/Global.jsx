@@ -64,12 +64,8 @@ export const GlobalProvider = ({ children }) => {
 
     runs.forEach((run) => {
       let curr = run.distance;
-      if (curr < shortest) {
-        shortest = curr;
-      }
-      if (curr > longest) {
-        longest = curr;
-      }
+      if (curr < shortest) shortest = curr;
+      if (curr > longest) longest = curr;
     });
     return { shortest, longest };
   }, [runs]);
@@ -96,7 +92,7 @@ export const GlobalProvider = ({ children }) => {
         .toString()
         .padStart(2, "0");
       const seconds = (totalSeconds % 60).toString().padStart(2, "0");
-      
+
       return `${hours}:${minutes}:${seconds}`;
     };
 
