@@ -36,7 +36,7 @@ function Chart() {
   const data = {
     labels: runs.map((run) => {
       const { date } = run;
-      return dateFormat(date, "m/d/yyyy");
+      return dateFormat(date, "m/d/yy");
     }),
 
     datasets: [
@@ -49,7 +49,7 @@ function Chart() {
           }),
         ],
         backgroundColor: "green",
-        tension: 0.2,
+        tension: 0.4,
       },
     ],
   };

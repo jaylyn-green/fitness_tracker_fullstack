@@ -16,8 +16,9 @@ function Dashboard() {
                 <h4>Hello Jay</h4>
                 </div>
                 <div>
-                    <p>Your total run distance is: {calcTotalMiles}</p>
-                    <p>Your total time is: {calcTotalTime}</p>
+                    <p>Your total run distance is: <span>{calcTotalMiles}</span></p>
+                    <p>Your total time is: <span>{calcTotalTime}</span></p>
+                    <p>View more info in the performance tab.</p>
                 </div>
                 <div className="stats-con">
                     <div className="chart-con">
@@ -29,6 +30,18 @@ function Dashboard() {
     );
 }
 const DashboardStyled = styled.div`
+display: flex;
+overflow: auto;
+.welcome-mes{
+    padding: .5rem 0;
+}
+p{
+    color: var(--primary-color);
+    padding-bottom: 3px;
+    span{
+        color: var(--color-green);
+    }
+}
 
 `;
 export default Dashboard;
